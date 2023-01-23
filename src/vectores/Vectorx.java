@@ -20,6 +20,7 @@ public class Vectorx {
 	 */
 	public void aleatorio() {
 		
+		elementos = datos.length;
 		for(int i=0;i<datos.length;i++) {
 			
 			datos[i] = (int)(Math.random()*100);
@@ -31,16 +32,64 @@ public class Vectorx {
 	
 	
 	
+	public MaxMin getMaxMin() {
+		
+		MaxMin devolver = new MaxMin();
+
+		devolver.setMax(getMaximo());
+		devolver.setMin(getMinimo());
+		
+		return devolver;
+	}
+	
+	
+	
+	
+	
+	private int getMinimo() {
+		
+		int minimo = 10000;
+		
+		for(int i=0;i<elementos;i++) {
+			
+			if(minimo>datos[i]) {
+				minimo = datos[i];
+			}
+		}
+		return minimo;
+		
+	}	
+	
+	
+	
+	
+	private int getMaximo() {
+		
+		int maximo = -10000;
+		
+		for(int i=0;i<elementos;i++) {
+			
+			if(maximo<datos[i]) {
+				maximo = datos[i];
+			}
+		}
+		return maximo;
+	}
+	
+	
+	
+	
 	/**
 	 * añadimos un número al vector que hay en vectorx
 	 * @param numero
 	 */
 	public void add(int numero) {
 		
-		if(elementos<datos.length) {
-			
-			datos[elementos] = numero;
-			elementos++;
+		datos[elementos] = numero;
+		elementos++;
+		
+		if(elementos==datos.length) {
+			elementos = 0;
 		}
 	}
 	
@@ -62,6 +111,7 @@ public class Vectorx {
 			
 			devolver += datos[i]+",";
 		}
+		//devolver += datos[elementos-1];
 		devolver+="]";
 		
 		return devolver;
