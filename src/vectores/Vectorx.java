@@ -95,8 +95,25 @@ public class Vectorx {
 	
 	
 	
+	public int buscar(int numero,int donde) {
+		
+		int i = donde;
+		boolean encontrado = false;
+		while(i<datos.length&&(!encontrado)) {
+			
+			if(numero==datos[i]) {
+				
+				encontrado = true;
+			}
+			else i++;
+		}
+		if(encontrado) return i; else return -1;
+	}
 	
 	
+	
+	
+	 
 	
 	/**
 	 * nosotrtos controlmos el toString, decidiendo qué

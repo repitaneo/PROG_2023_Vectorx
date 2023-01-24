@@ -6,18 +6,26 @@ public class Start {
 
 		Vectorx v = new Vectorx();
 		v.add(2);
-		v.add(4);
+		v.add(100);
 		v.add(7);
 		v.add(8);
-		v.add(10);
+		v.add(100);
 		v.add(20);
-		v.add(25);
-		v.add(250);
+		v.add(100);
+		v.add(100);
 		v.add(650);
-		v.add(6500);
-		v.add(9999);
-		v.add(5555);
-		System.out.println(v);
+		
+		
+		int donde = v.buscar(100, 0);
+		while(donde!=-1) {
+			
+			System.out.println(donde);
+			donde = v.buscar(100, donde+1);
+		}
+		
+		
+		
+		
 
 		
 		
